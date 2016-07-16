@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :role do
     trait :admin do
-      name "admin"
+      name 'admin'
     end
   end
 end
