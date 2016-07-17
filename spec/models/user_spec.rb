@@ -4,9 +4,9 @@ RSpec.describe User, type: :model do
 	let(:user){ create :user }
 
 	it "validation" do
-		 is_expected.to validate_presence_of(:first_name)
-		 is_expected.to validate_presence_of(:last_name)
-		 is_expected.to validate_presence_of(:email)
-		 is_expected.to validate_uniqueness_of(:email)
+		%w(first_name last_name email).each do |field|
+			is_expected.to validate_presence_of(field.to_sym)
+		end
+		is_expected.to validate_uniqueness_of(:email)
 	end
 end
