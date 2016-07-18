@@ -15,11 +15,11 @@
 require 'rails_helper'
 
 RSpec.describe News, type: :model do
-	let(:news){ create :news }
-	
+  let(:news){ create :news }
+  
   it "validation" do
-  	%w(title description body).each do |field|
-			is_expected.to validate_presence_of(field.to_sym)
-		end
+    %w(title description body).each do |field|
+      is_expected.to validate_presence_of(field.to_sym)
+    end
   end
 end

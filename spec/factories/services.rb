@@ -14,7 +14,7 @@
 FactoryGirl.define do
   factory :service do
     name "MPLS"
-    description "Same text"
+    description "Some text"
     body "MyText"
   end
 end

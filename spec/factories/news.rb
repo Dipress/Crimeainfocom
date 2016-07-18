@@ -14,7 +14,7 @@
 
 FactoryGirl.define do
   factory :news do
-    title "Same title news"
+    title "Some title news"
     description "This is important string"
     body "All text"
     main_page false
