@@ -15,7 +15,6 @@
 FactoryGirl.define do
   factory :news do
     title "Same title news"
-    slug "same-title-news"
     description "This is important string"
     body "All text"
     main_page false

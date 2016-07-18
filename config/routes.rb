@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+	root to: 'news#index'
   
   get 'static_pages/index'
 
