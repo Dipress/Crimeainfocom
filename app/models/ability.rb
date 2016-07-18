@@ -10,6 +10,7 @@ class Ability
     else
       can :read, :StaticPage
       can :read, :Service
+      can :read, :News
     end
     #
     # The first argument to `can` is the action you are giving the user
