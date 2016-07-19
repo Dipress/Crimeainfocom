@@ -42,7 +42,7 @@ class NewsController < ApplicationController
     redirect_to @news
   end
 
-  def update_params; create_params end
+  def update_params; news_params end
 
   private
 
