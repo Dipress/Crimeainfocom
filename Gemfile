@@ -9,6 +9,10 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+#Frontend
+gem 'haml'
+gem 'bootstrap-sass', '~> 3.3.6'
+
 # Database
 gem 'mysql2'
 # Use Puma as the app server

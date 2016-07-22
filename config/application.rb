@@ -21,5 +21,9 @@ module Crimeainfocom
     	request_specs: false
     	g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.generators do |g|
+      g.template_engine :haml
+    end
   end
 end
