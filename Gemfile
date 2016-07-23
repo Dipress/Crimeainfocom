@@ -10,7 +10,7 @@ gem 'cancancan'
 gem 'rolify'
 
 #Frontend
-gem 'haml'
+gem 'slim'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # Database
