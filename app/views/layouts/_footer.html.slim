@@ -1,5 +1,31 @@
 .container
   .row
-    .col-lg-12
+    .col-lg-4
+      h4 Главная
+      .hline-w
+      ul
+        li=link_to "Сотрудничество", "#"
+        li=link_to "Лицензии", "#"
+        li=link_to "Реквизиты", "#"
+        li=link_to "Для клиентов", "#"
+    .col-lg-4
+      h4 Услуги и цены
+      .hline-w
+      ul
+        li=link_to "Беспроводной доступ", "#"
+        li=link_to "Выделенная линия", "#"
+        li=link_to "Домашний", "#"
+        li=link_to "Другое", "#"
+    .col-lg-4
+      h4 Контакты
+      .hline-w
       p
-        | Место для футера
+        | г. Симферополь
+        br/
+        | ул. Тургенева, 20
+        br/
+        | пн-пт с 8-00 до 17-00
+        br/
+        | +7(978)838-37-23
+        br/
+        = mail_to "contacts@crimeainfo.com"
