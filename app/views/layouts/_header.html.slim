@@ -1,17 +1,27 @@
-.navbar.navbar-inverse
+.navbar.navbar-default.navbar-fixed-top role="navigation" 
   .container
     .navbar-header
-      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button" 
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
         span.sr-only Toggle navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to "ООО Крыминфоком", root_path, class: "navbar-brand"
-    #navbar.navbar-collapse.collapse
-      ul.nav.navbar-nav.navbar-right
-        li= link_to "Главная" , root_path
-        li= link_to "Сотрудничество", "#"
-        li= link_to "Лицензии", "#"
-        li= link_to "Услуги и цены", "#"
+      a.navbar-brand href="index.html"  Крыминфоком
+    .navbar-collapse.collapse.navbar-right
+      ul.nav.navbar-nav
+        li.active
+          = link_to "Главная", root_path
+        li = link_to "Сотрудничество", "#"
+        li = link_to "Лицензии", "#"
+        li = link_to "Реквизиты", "#"
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" href="#" 
+            | Услуги и цены
+            b.caret
+          ul.dropdown-menu
+            li = link_to "Беспроводной доступ", "#"
+            li = link_to "Выделенная линия", "#"
+            li = link_to "Домашний", "#"
+            li = link_to "Другое", "#"
         li= link_to "Для клиентов", "#"
         li= link_to "Контакты", "#"

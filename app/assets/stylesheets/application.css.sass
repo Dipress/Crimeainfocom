@@ -15,20 +15,222 @@
 
 @import "bootstrap-sprockets"
 @import "bootstrap"
+@import "font-awesome-sprockets"
+@import "font-awesome"
 
 html
   body
-    background-color: #f5f8fa
-    .request
+    background: #ffffff 
+    margin: 0
+    height: 100% 
+    color: #384452
+    font-family: 'Lato', sans-serif
+    font-weight: 400
+
+    h1, h2, h3, h4, h5, h6
+      font-family: 'Raleway', sans-serif
+      font-weight: 700
+
+    p 
+      padding: 0 
+      margin-bottom: 12px
+      font-family: 'Lato', sans-serif
+      font-weight: 400
+      font-size: 14px
+      line-height: 24px
+      color: #384452
+      margin-top: 10px
+
+    img
+      height: auto
+      max-width: 100%
+
+    a 
+      padding: 0
+      margin: 0
+      text-decoration: none 
+      -webkit-transition: background-color .4s linear, color .4s linear
+      -moz-transition: background-color .4s linear, color .4s linear
+      -o-transition: background-color .4s linear, color .4s linear
+      -ms-transition: background-color .4s linear, color .4s linear
+      transition: background-color .4s linear, color .4s linear
+
+    a:hover,
+    a:focus
+      text-decoration: none
+      color: #01b2fe
+
+    .centered 
+      text-align: center
+
+    header
+      .navbar
+        min-height: 70px
+        padding-top: 10px
+        margin-bottom: 0px
+
+      .navbar-brand
+        font-family: 'Raleway', sans-serif
+        font-weight: 900
+
+      .navbar-header .navbar-brand
+        color: white
+
+      .navbar-default .navbar-nav > li > a
+        color: white
+        font-weight: 700
+        font-size: 12px
+
+      .navbar-default .navbar-nav > li > a:hover
+        color: #00b3fe
+
+      .navbar-default .navbar-nav > .active > a, 
+      .navbar-default .navbar-nav > .active > a:hover, 
+      .navbar-default .navbar-nav > .active > a:focus
+        color: #00b3fe
+        background-color: transparent
+
+      .navbar-default
+        background-color: #384452
+        border-color: transparent
+
+      .dropdown-menu 
+        background: #384452
+
+      .dropdown-menu > li > a
+        color: white
+        font-weight: 700
+        font-size: 12px
+
+      .btn-theme
+        color: #fff
+        background-color: #384452
+        border-color: #384452
+        margin: 4px
+
+      .btn-theme:hover,
+      .btn-theme:focus,
+      .btn-theme:active,
+      .btn-theme.active,
+      .open .dropdown-toggle.btn-theme
+        color: #fff
+        background-color: #00b3fe
+        border-color: #00b3fe
+
+      .dmbutton:hover,
+      .dmbutton:active,
+      .dmbutton:focus
+        color: #ffffff
+        background-color: #222222
+        border-color: #ffffff
+
+      .dmbutton
+        background:rgba(0, 0, 0, 0)
+        border: 1px solid #ffffff
+        color: #ffffff
+        -webkit-border-radius: 2px
+        border-radius: 2px
+        padding-top: 1.025rem
+        padding-right: 2.25rem
+        letter-spacing: 0.85px
+        padding-bottom: 1.0875rem
+        padding-left: 2.25rem
+        font-size: 1.55rem
+        cursor: pointer
+        font-weight: normal
+        line-height: normal
+        margin: 0 0 1.25rem
+        text-decoration: none
+        text-align: center
+        display: inline-block
+        -webkit-transition: background-color 300ms ease-out
+        -moz-transition: background-color 300ms ease-out
+        transition: background-color 300ms ease-out
+        -webkit-appearance: none
+        font-weight: normal !important
+
+      .mtb
+        margin-top: 80px
+        margin-bottom: 80px
+
+      .mb
+        margin-bottom: 60px
+      .mt
+        margin-top: 60px
+      
+      .hline
+        border-bottom: 2px solid #384452
+
+      .hline-w
+        border-bottom: 2px solid #ffffff
+        margin-bottom: 25px
+
+    .hover
+      background: url('slide3.jpg') center 0 no-repeat
+      /*background-color: #00b3fe*/
+      min-height: 590px
+      padding-top: 100px
+      padding-bottom: 0px
+      text-align: center
+
+      h3, h5
+        color: white
+        font-weight: 400
+      h1 
+        color: white
+        margin-bottom: 25px
+
+
+    .callout
+      z-index: 10
+      padding: 30px 0
+      background-color: #00b3fe
       .container
         .row
-          .col-lg-12
-            background-color: green
+          .col-lg-9
+            h3
+              font-size: 1.8em
+              letter-spacing: normal
+              line-height: 24px
+              color: #fff
+              margin: 0 0 8px 0
+            p
+              margin: 0
+              padding: 0
+              font-size: 16px
+              font-weight: 300
+          .col-lg-3
+            .btn
+              margin-top: 0
+
     .services
+      position: relative
+      display: block
+      font-size: 16px
+      width: 100%
+      height: 79px
+
       .container
         .row
-          .col-lg-4
-            background-color: orange
+          .col-lg-3
+            span.text
+              position: relative
+              display: inline-block
+              vertical-align: middle
+              margin: 23px 6px 0px 0px
+              float: left
+              font-size: 20px
+            span.icon
+              position: relative
+              display: inline-block
+              vertical-align: middle
+              margin: 18px 6px 0px 0px
+              float: left
+              
+              i
+                font-size: 36px
+
+      background: url('bg_banners.png') 0 0 repeat-x
     footer
       .container
         .row
