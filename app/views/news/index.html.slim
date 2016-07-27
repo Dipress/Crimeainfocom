@@ -1,0 +1,11 @@
+- @news.each do |n|
+  .row
+    .col-lg-12
+      h5 
+        = n.title
+      p 
+        = truncate("#{n.description}", length: 150) 
+      span
+        = n.created_at
+p
+  = link_to "Все новости", "#"
