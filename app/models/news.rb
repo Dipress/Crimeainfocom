@@ -10,9 +10,11 @@
 #  published   :boolean          default(FALSE)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  slug        :string(255)
 #
 
 class News < ApplicationRecord
-	
-	validates :title, :description, :body, presence: true
+  include Slugable
+  
+  validates :title, :description, :body, presence: true
 end
