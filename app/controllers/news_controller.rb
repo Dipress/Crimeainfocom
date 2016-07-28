@@ -47,7 +47,7 @@ class NewsController < ApplicationController
   private
 
     def news_params
-      params.require(:news).permit(:title, :description, :body, :main_page, :published)
+      params.require(:news).permit(:title, :description, :body, :main_page, :published, :slug)
     end
 
     def find_news
