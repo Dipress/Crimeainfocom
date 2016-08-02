@@ -9,6 +9,15 @@ gem 'devise'
 gem 'cancancan'
 gem 'rolify'
 
+#Administration
+gem 'activeadmin', github: 'activeadmin'
+gem 'kaminari'
+
+#ActiveAdmin depends
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'ransack',             github: 'activerecord-hackery/ransack'
+gem 'draper',              '> 3.x'
+
 #Frontend
 gem 'slim'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -49,10 +58,10 @@ group :development, :test do
 end
 
 group :test do
-	gem "faker"
-	gem "database_cleaner"
-	gem 'shoulda'
-	gem 'shoulda-matchers', require: false
+  gem "faker"
+  gem "database_cleaner"
+  gem 'shoulda'
+  gem 'shoulda-matchers', require: false
   gem 'rails-controller-testing'
 end
 

@@ -11,6 +11,7 @@ class Ability
       can :read, News
       can :read, Service
       can :read, StaticPage
+      can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
     #
     # The first argument to `can` is the action you are giving the user
