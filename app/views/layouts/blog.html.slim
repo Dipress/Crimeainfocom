@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title ООО Крыминфоком
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+  body
+    header
+      = render 'layouts/header'
+    section.wrapper
+      .container
+        .row
+          .col-lg-9
+            == yield
+          .col-lg-3.contacts
+            h3 Контакты
+
+            h4 Отдел продаж:
+            p.tel +7(3652) 24-85-25
+            p.tel +7(3652) 24-84-54
+            p.tel +7(978) 838-37-23
+            p
+              | Россия, Республика Крым, 
+              br/
+              | г. Cимферополь, ул. Тургенева, 20
+              br/
+              = mail_to("contracts@crimeainfo.com")
+
+            h4 Тех. поддержка:
+            p.tel +7(3652) 54-70-77
+            p.tel +7(978) 838-37-73
+            p
+              | Россия, Республика Крым, 
+              br/
+              | г. Cимферополь, ул. Тургенева, 20
+              br/
+              = mail_to("support@crimeainfo.com")
+              
+            p.tel +7(3652) 54-70-77
+            p.tel +7(978) 838-37-75
+            p
+              | Россия, Республика Крым, 
+              br/
+              | г. Бахчисарай, ул. Строительная, 23
+              br/
+              = mail_to("support@crimeainfo.com")
+    footer
+      = render 'layouts/footer'
