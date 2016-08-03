@@ -4,7 +4,7 @@ class NewsController < ApplicationController
   before_action :find_news, only: [:show, :edit, :update, :delete, :destroy]
 
   def index
-    @news = News.all
+    @news = News.all.where(published: true).limit(4)
   end
 
   def new
