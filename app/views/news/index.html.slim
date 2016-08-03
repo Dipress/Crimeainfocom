@@ -2,10 +2,10 @@
   .row
     .col-lg-12
       h5 
-        = n.title
+        = link_to n.title, news_path(n.to_param)
       p 
         = truncate("#{n.description}", length: 150) 
       span
-        = n.created_at
+        = I18n.l n.created_at, format: :long
 p
   = link_to "Все новости", "#"
