@@ -16,5 +16,10 @@
 class News < ApplicationRecord
   include Slugable
   
+  # Relations
+  has_many :pictures, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :pictures
+
+  # Validations
   validates :title, :description, :body, presence: true
 end

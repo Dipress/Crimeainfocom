@@ -23,6 +23,10 @@ gem 'slim'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
 
+#Images
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'rmagick'
+
 # Database
 gem 'mysql2'
 # Use Puma as the app server
