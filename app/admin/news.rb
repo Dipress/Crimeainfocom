@@ -1,5 +1,5 @@
 ActiveAdmin.register News do
-  permit_params :title, :slug, :description, :body, :published, :main_page
+  permit_params :title, :slug, :description, :body, :published, :main_page, pictures_attributes: [:id, :file, :_destroy]
 
   index do
     selectable_column
@@ -16,7 +16,7 @@ ActiveAdmin.register News do
   filter :main_page
   filter :created_at
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs "News Details" do
       f.input :title
       f.input :slug
@@ -24,7 +24,10 @@ ActiveAdmin.register News do
       f.input :body
       f.input :published
       f.input :main_page
-    end
+      f.has_many :pictures do |p|
+        p.input :file, as: :file
+      end
+  end
     f.actions
   end
 end

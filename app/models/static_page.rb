@@ -13,5 +13,9 @@
 class StaticPage < ApplicationRecord
   include Tailable
 
+  # Relations
+  has_many :pictures, as: :imageable
+
+  # Validations
   validates :body, :title, :slug, presence: true
 end

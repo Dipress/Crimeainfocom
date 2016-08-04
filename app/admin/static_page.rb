@@ -1,5 +1,5 @@
 ActiveAdmin.register StaticPage do
-  permit_params :body, :title, :slug
+  permit_params :body, :title, :slug, :pictures
 
   index do
     selectable_column
@@ -19,6 +19,7 @@ ActiveAdmin.register StaticPage do
       f.input :title
       f.input :slug
       f.input :body
+      f.input :pictures, required: false, as: :file
     end
     f.actions
   end
