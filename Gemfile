@@ -26,6 +26,10 @@ gem 'font-awesome-sass'
 #Images
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'rmagick'
+gem 'mini_magick'
+
+#Editors
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # Database
 gem 'mysql2'

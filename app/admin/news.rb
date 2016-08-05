@@ -21,7 +21,7 @@ ActiveAdmin.register News do
       f.input :title
       f.input :slug
       f.input :description
-      f.input :body
+      f.input :body, as: :ckeditor, input_html: { ckeditor: { height: 400 } }
       f.input :published
       f.input :main_page
       f.has_many :pictures do |p|
