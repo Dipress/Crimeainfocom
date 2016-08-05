@@ -14,4 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require ckeditor/init
 //= require_tree .
+
+$(document).ready(function(){
+  if ( $('#ckeditor').length ) 
+    CKEDITOR.replace( 'ckeditor' );
+  if ( $('#ckeditor').prev('label').length ) 
+    $('#ckeditor').prev('label').css('float','none');
+});

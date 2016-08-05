@@ -7,6 +7,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role? :admin
       can :manage, :all
+      can :access, :ckeditor
     else
       can :read, News
       can :read, Service
