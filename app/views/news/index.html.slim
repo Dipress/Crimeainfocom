@@ -3,12 +3,12 @@
     .col-lg-12
       h5 
         = link_to n.title, news_path(n.to_param)
+      p
+        - n.pictures.each do |p|
+          = image_tag p.file_url(:thumb).to_s
       p 
         = truncate("#{n.description}", length: 150) 
       span
         = I18n.l n.created_at, format: :long
-      p
-        - n.pictures.each do |p|
-          = image_tag p.file_url(:thumb).to_s
 p
   = link_to "Все новости", "#"
