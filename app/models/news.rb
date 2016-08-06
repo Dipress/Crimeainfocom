@@ -18,7 +18,7 @@ class News < ApplicationRecord
   
   # Relations
   has_many :pictures, as: :imageable, dependent: :destroy
-  accepts_nested_attributes_for :pictures
+  accepts_nested_attributes_for :pictures, allow_destroy: true
 
   # Validations
   validates :title, :description, :body, presence: true
