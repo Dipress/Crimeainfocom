@@ -12,7 +12,12 @@
 #
 
 class Service < ApplicationRecord
-	has_many :services
 
-	validates :name, :description, :body, presence: true
+  #Relations
+  has_many :services
+  has_many :pictures, as: :imageable, dependent: :destroy
+  accepts_nested_attributes_for :pictures, allow_destroy: true
+
+  #Validations
+  validates :name, :description, :body, presence: true
 end

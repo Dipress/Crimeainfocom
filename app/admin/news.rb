@@ -1,5 +1,6 @@
 ActiveAdmin.register News do
   permit_params :title, :slug, :description, :body, :published, :main_page, pictures_attributes: [:id, :file, :_destroy]
+  menu label: proc{ I18n.t "active_admin.headers.news" }
 
   index do
     selectable_column
@@ -12,7 +13,7 @@ ActiveAdmin.register News do
   end
 
   show do
-    panel "News Details" do
+    panel "#{I18n.t('active_admin.forms.detail')}" do
       attributes_table_for news do
         row :id
         row :title
@@ -40,7 +41,7 @@ ActiveAdmin.register News do
   filter :created_at
 
   form(html: { multipart: true }) do |f|
-    f.inputs "News Details" do
+    f.inputs "#{I18n.t('active_admin.forms.detail')}" do
       f.input :title
       f.input :slug
       f.input :description
@@ -48,8 +49,8 @@ ActiveAdmin.register News do
       f.input :published
       f.input :main_page
       f.has_many :pictures do |p|
-        p.input :file, as: :file, label: "Picture", hint: image_tag(p.object.file.url(:thumb).to_s)
-        p.input :_destroy, as: :boolean, required: :false, label: 'Remove image'
+        p.input :file, as: :file, label: "#{I18n.t('activerecord.models.picture.one')}", hint: image_tag(p.object.file.url(:thumb).to_s)
+        p.input :_destroy, as: :boolean, required: :false, label: "#{I18n.t('active_admin.forms.delete_image')}"
       end
     end
     f.actions
