@@ -1,5 +1,6 @@
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation, :first_name, :last_name, :middle_name, role_ids: []
+  menu label: proc{ I18n.t "active_admin.headers.user" }
 
   index do
     selectable_column
@@ -8,9 +9,8 @@ ActiveAdmin.register User do
     column :roles do |user|
       user.roles.first.name unless user.roles.blank?
     end
-    column :current_sign_in_at
-    column :sign_in_count
     column :created_at
+    column :updated_at
     actions
   end
 
@@ -20,7 +20,7 @@ ActiveAdmin.register User do
   filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs "#{I18n.t('active_admin.forms.detail')}" do
       f.input :email
       f.input :password
       f.input :password_confirmation

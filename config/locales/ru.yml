@@ -1,4 +1,79 @@
 ru:
+  activerecord:
+    models:
+      news:
+        one: "Новость"
+        other: "Новости"
+      picture:
+        one: "Изображение"
+        other: "Изображения"
+      service:
+        one: "Услуга"
+        other: "Услуги"
+      static_page:
+        one: "Статическая страница"
+        other: "Статические страницы"
+      role:
+        one: "Группа"
+        other: "Группы"
+      user:
+        one: "Пользователь"
+        other: "Пользователи"
+    attributes:
+      news:
+        id: "№"
+        title: "Заголовок"
+        slug: "URL"
+        description: "Короткое описание"
+        body: "Основной текст"
+        published: "Опубликовано"
+        main_page: "На главной"
+        created_at: "Дата создания"
+        updated_at: "Дата обновления"
+      service:
+        id: "№"
+        name: "Название"
+        description: "Короткое описание"
+        body: "Основной текст"
+        service_ids: "Родительская услуга"
+        service_id: "Родительская услуга"
+        created_at: "Дата создания"
+        updated_at: "Дата обновления"
+      static_page:
+        id: "№"
+        title: "Заголовок"
+        slug: "URL"
+        body: "Основной текст"
+        created_at: "Дата создания"
+        updated_at: "Дата обновления"
+      role:
+        id: "№"
+        name: "Название"
+        created_at: "Дата создания"
+        updated_at: "Дата обновления"
+      user:
+        id: "№"
+        email: "Email"
+        role_ids: "Группы"
+        role_id: "Группа"
+        created_at: "Дата создания"
+        updated_at: "Дата обновления"
+  formtastic:
+    actions:
+      create: "Создать"
+      update: "Обновить"
+      delete: "Удалить"
+      show: "Открыть"
+  active_admin:
+    headers:
+      news: "Новости"
+      user: "Пользователи"
+      role: "Группы"
+      static_page: "Статический контент"
+      service: "Услуги"
+    forms:
+      detail: "Детали"
+      delete_image: "Удалить изображение"
   crimeainfocom:
     services:
       name:

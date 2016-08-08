@@ -1,17 +1,21 @@
 ActiveAdmin.register Role do
+  permit_params :id, :name, :resource_type, :resource_id
+  menu label: proc{ I18n.t "active_admin.headers.role" }
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :created_at
+    actions
+  end
 
+  filter :name
 
+  form do |f|
+    f.inputs "#{I18n.t('active_admin.forms.detail')}" do
+      f.input :name
+    end
+    f.actions
+  end
 end
