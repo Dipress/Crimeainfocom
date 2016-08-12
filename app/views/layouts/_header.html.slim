@@ -10,7 +10,7 @@
     .navbar-collapse.collapse.navbar-right
       ul.nav.navbar-nav
         li.active
-          = link_to "Главная", root_path
+          = link_to "Новости", news_index_path
         - StaticPage.all.limit(3).each do |sp|
           li = link_to sp.title, "/#{sp.slug}"
         li.dropdown

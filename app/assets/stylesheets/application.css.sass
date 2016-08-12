@@ -18,23 +18,23 @@
 @import "font-awesome-sprockets"
 @import "font-awesome"
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,cyrillic)
+
 html
   body
-    background: #ffffff 
+    background: #fff 
     margin: 0
     height: 100% 
     color: #384452
-    font-family: 'Lato', sans-serif
+    font-family: 'Open Sans', Arial, sans-serif
     font-weight: 400
 
     h1, h2, h3, h4, h5, h6
-      font-family: 'Raleway', sans-serif
-      font-weight: 700
-
+      font-family: 'Open Sans', Arial,  sans-serif
     p 
       padding: 0 
       margin-bottom: 12px
-      font-family: 'Lato', sans-serif
+      font-family: 'Open Sans', Arial,  sans-serif
       font-weight: 400
       font-size: 14px
       line-height: 24px
@@ -45,31 +45,64 @@ html
       height: auto
       max-width: 100%
 
-    a 
-      padding: 0
-      margin: 0
-      text-decoration: none 
-      -webkit-transition: background-color .4s linear, color .4s linear
-      -moz-transition: background-color .4s linear, color .4s linear
-      -o-transition: background-color .4s linear, color .4s linear
-      -ms-transition: background-color .4s linear, color .4s linear
-      transition: background-color .4s linear, color .4s linear
+    .wrapper
+      .container
+        .row
+          .col-lg-4.news
+            h3
+              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              color: #000
+              letter-spacing: -0.15px
+            span.label.label-info
+              background-color: #57aacd
+          .col-lg-4.about
+            h3
+              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              color: #000
+              letter-spacing: -0.15px
+            .image
+              overflow: hidden
+              img
+                -webkit-transition: all 1s ease
+                -moz-transition: all 1s ease
+                -o-transition: all 1s ease
+                -ms-transition: all 1s ease
+                transition: all 1s ease
+            .image:hover img
+              -webkit-transform: scale(1.5)
+              -moz-transform: scale(1.5)
+              -o-transform: scale(1.5)
+              transform: scale(1.5)
+          .col-lg-4.contacts
+            h3
+              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              color: #000
+              letter-spacing: -0.15px
+            p.tel, p, a
+              color: #fff
+            a
+              font-weight: 700
+            p.tel
+              margin: 0
+              font-size: 18px
+              font-family: 'Open Sans', Arial, sans-serif
+            .block
+              font-family: 'Open Sans', Arial, sans-serif
+              padding: 30px 30px 25px
+              background: #57aacd
+              i
+                padding-right: 5px
+              h2
+                text-align: center
+                font-family: 'Open Sans', Arial, sans-serif
+                color: #fff
+                font-size: 34px
+                line-height: 38px
+              h3
+                color: #fff
+              hr
+                margin-top: 0px
 
-    a:hover,
-    a:focus
-      text-decoration: none
-      color: #01b2fe
-
-    .centered 
-      text-align: center
-    p.tel
-      font: bold 20px/20px 'Roboto Slab'
-      color: #00b3fe
-      margin: 0
-
-    .contacts
-      background-color: #eceff1
-    .news
 
     header
       .navbar
@@ -78,100 +111,57 @@ html
         margin-bottom: 0px
 
       .navbar-brand
-        font-family: 'Raleway', sans-serif
+        font-family: 'Open Sans', Arial,  sans-serif
         font-weight: 900
 
-      .navbar-header .navbar-brand
+      .navbar-header .navbar-brand 
         color: white
+      .navbar-header .navbar-brand:hover
+        color: #57aacd
 
       .navbar-default .navbar-nav > li > a
-        color: white
-        font-weight: 700
-        font-size: 12px
+        font-family: 'Open Sans',sans-serif
+        font-size: 18px
+        font-weight: 600
+        color: #fff
+        text-decoration: none
 
-      .navbar-default .navbar-nav > li > a:hover
-        color: #00b3fe
+      .navbar-default .navbar-nav > li > a:hover,
+      .navbar-default .navbar-nav > li > a:focus,
+        color: #57aacd
 
       .navbar-default .navbar-nav > .active > a, 
       .navbar-default .navbar-nav > .active > a:hover, 
       .navbar-default .navbar-nav > .active > a:focus
-        color: #00b3fe
+        color: #57aacd
         background-color: transparent
 
       .navbar-default
-        background-color: #384452
-        border-color: transparent
+        border-bottom: 5px #57aacd solid
+        background-color: #434547
 
       .dropdown-menu 
-        background: #384452
+        background: #434547
 
       .dropdown-menu > li > a
-        color: white
-        font-weight: 700
-        font-size: 12px
-
-      .dmbutton:hover,
-      .dmbutton:active,
-      .dmbutton:focus
-        color: #ffffff
-        background-color: #222222
-        border-color: #ffffff
-
-      .dmbutton
-        background:rgba(0, 0, 0, 0)
-        border: 1px solid #ffffff
-        color: #ffffff
-        -webkit-border-radius: 2px
-        border-radius: 2px
-        padding-top: 1.025rem
-        padding-right: 2.25rem
-        letter-spacing: 0.85px
-        padding-bottom: 1.0875rem
-        padding-left: 2.25rem
-        font-size: 1.55rem
-        cursor: pointer
-        font-weight: normal
-        line-height: normal
-        margin: 0 0 1.25rem
+        font-family: 'Open Sans',sans-serif
+        font-size: 18px
+        font-weight: 600
+        color: #fff
         text-decoration: none
-        text-align: center
-        display: inline-block
-        -webkit-transition: background-color 300ms ease-out
-        -moz-transition: background-color 300ms ease-out
-        transition: background-color 300ms ease-out
-        -webkit-appearance: none
-        font-weight: normal !important
 
-      .mtb
-        margin-top: 80px
-        margin-bottom: 80px
 
-      .mb
-        margin-bottom: 60px
-      .mt
-        margin-top: 60px
-      
-      .hline
-        border-bottom: 2px solid #384452
-
-      .hline-w
-        border-bottom: 2px solid #ffffff
-        margin-bottom: 25px
+ 
 
     .hover
-      background: url('slide3.jpg') center 0 no-repeat
-      /*background-color: #00b3fe*/
-      min-height: 590px
-      padding-top: 100px
-      padding-bottom: 0px
-      text-align: center
-
+      margin-top: 75px
       h3, h5
         color: white
         font-weight: 400
       h1 
         color: white
         margin-bottom: 25px
+
     .content
       .container
         .row
@@ -186,40 +176,35 @@ html
                 font-size: 12px
                 color: #b3b3b3
             .body
-          .col-lg-4
-            h4
-            .hline
-              border-bottom: 2px solid #384452
-            .smallservices, .smallnews, .smallchapters
-              margin-top: 16px
-              ul
-                padding: 0
-                margin: 0 0 24px 0
-                li
-                  list-style-type: none
-                  padding-top: 10px
-                  i
-                    padding-right: 5px
-            .popular-news 
-              margin: 0px
-              padding-left: 0px
-              li
-                list-style: none
-                margin-bottom: 20px 
-                min-height: 70px
-                a, a:hover
-                  color: #2f2f2f 
-                  text-decoration: none
-                img
-                  float: left 
-                  margin-right: 20px
-                em 
-                  font-family: 'Lato', sans-serif
-                  font-size: 12px
-                  color: #b3b3b3
-                p 
-                  line-height: normal
-                  margin-bottom: auto
+          .col-lg-4.contacts
+            h3
+              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              color: #000
+              letter-spacing: -0.15px
+            p.tel, p, a
+              color: #fff
+            a
+              font-weight: 700
+            p.tel
+              margin: 0
+              font-size: 18px
+              font-family: 'Open Sans', Arial, sans-serif
+            .block
+              font-family: 'Open Sans', Arial, sans-serif
+              padding: 30px 30px 25px
+              background: #57aacd
+              i
+                padding-right: 5px
+              h2
+                text-align: center
+                font-family: 'Open Sans', Arial, sans-serif
+                color: #fff
+                font-size: 34px
+                line-height: 38px
+              h3
+                color: #fff
+              hr
+                margin-top: 0px
 
     .wrapp-blue
       background: #00b3fe
@@ -234,81 +219,39 @@ html
               color: white
               margin-left: 15px
 
-
-    .callout
-      z-index: 10
-      padding: 30px 0
-      background-color: #00b3fe
+    .services
       .container
         .row
-          .col-lg-9
-            h3
-              font-size: 1.8em
-              letter-spacing: normal
-              line-height: 24px
-              color: #fff
-              margin: 0 0 8px 0
-            p
-              margin: 0
-              padding: 0
-              font-size: 16px
-              font-weight: 300
+          .col-lg-12
+            margin: 26px 0 35px 0
+            h2
+              text-align: center
+              font: 300 23px/28px "Open Sans",Arial,sans-serif
+              color: #000
+              letter-spacing: -.15px
+        .row
           .col-lg-3
-            .btn
-              margin-top: 0
-
-    .services
-      margin-top: 100px
-      margin-bottom: 80px
-      p.description
-        text-align: justify
-
-      i
-        color: #00b3fe
-        font-size: 60px
-        padding: 15px
-
-      .btn-theme
-        color: #fff
-        background-color: #384452
-        border-color: #384452
-        margin: 4px
-
-      .btn-theme:hover,
-      .btn-theme:focus,
-      .btn-theme:active,
-      .btn-theme.active,
-      .open .dropdown-toggle.btn-theme
-        color: #fff
-        background-color: #00b3fe
-        border-color: #00b3fe
+            .icons
+              vertical-align: baseline
+              text-align: center
+              line-height: 70px
+              i
+                width: 100px
+                height: 100px
+                line-height: 100px
+                font-size: 52px
+                text-align: center
+                color: #fff
+                background: #62bfe6
 
     footer
       margin-top: 100px
-      padding-top: 60px
-      padding-bottom: 60px
-      background: #384452
-      p
-        color: #bfc9d3
-      ul
-        margin: 0
-        padding: 0
-        list-style-type: none 
-        li
-          color: #bfc9d3
-      h4
-        color: white
-      i
-        font-size: 30px
-        color: #bfc9d3
-        padding-right: 25px
-
-      i:hover
-        color: #00b3fe
-
+      padding: 10px 0px 10px 0px
+      background-color: #434547
+      border-top: 5px #57aacd solid
       .container
         .row
-          .col-lg-4
-            .hline-w
-              border-bottom: 2px solid #ffffff
-              margin-bottom: 25px
+          .col-lg-12
+            p
+              text-align: center
+              color: #fff

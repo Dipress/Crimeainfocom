@@ -1,3 +1,6 @@
+p 
+  - @page.pictures.each do |p|
+    = image_tag(p.file_url.to_s)
 h1 = @page.title
 p = @page.body.html_safe
-p = image_tag @page.pictures
+

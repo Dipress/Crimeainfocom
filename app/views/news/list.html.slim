@@ -1,0 +1,12 @@
+- @news.each do |n|
+  .row
+    .col-lg-12
+      span.label.label-info
+        = I18n.l n.created_at, format: :long
+      p
+        = link_to n.title, news_path(n.to_param)
+      /p
+        - n.pictures.each do |p|
+          = image_tag p.file_url(:medium).to_s
+      p 
+        = truncate("#{n.description}", length: 150)

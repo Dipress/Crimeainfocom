@@ -1,2 +1,11 @@
-- @service.each do |s|
-  s.name
+- @services.each do |s|
+  .row
+    .col-lg-12
+      h3 = link_to s.name, service_path(s.to_param)
+      .date
+        p = I18n.l s.created_at, format: :long
+      .body
+        = s.body.html_safe
+      /p
+        - n.pictures.each do |p|
+          = image_tag p.file_url(:medium).to_s

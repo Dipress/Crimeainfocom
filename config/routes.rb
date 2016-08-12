@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
-  root to: 'news#index'
+  root to: 'news#list'
   
   get 'static_pages/index'
 

@@ -1,1 +1,8 @@
-= @service.name
+- @service.pictures.each do |p|
+  .picture
+    = image_tag p.file_url.to_s
+h3 = @service.name
+.date
+  p = I18n.l @service.created_at, format: :long
+.body
+  = @service.body.html_safe

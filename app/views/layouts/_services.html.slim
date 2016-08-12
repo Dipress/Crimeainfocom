@@ -1,30 +1,21 @@
 .container
-  .row.centered
+  .row
+    .col-lg-12
+      h2 Почему стоит выбрать компанию «Крыминфоком»? Смотрите сами:
+  .row
     .col-lg-3
-      i.fa.fa-wifi aria-hidden="true"
-      h4 = t('crimeainfocom.services.name.wireless')
-      p.description = t('crimeainfocom.services.description.wireless')
-      p
-        br/
-        = link_to "Подробнеее", "#", class: "btn btn-theme"
+      .icons
+        i.fa.fa-wifi aria-hidden="true"
+      p= t('crimeainfocom.services.description.wireless')
     .col-lg-3
-      i.fa.fa-globe aria-hidden="true"
-      h4 = t('crimeainfocom.services.name.corporation')
-      p.description = t('crimeainfocom.services.description.corporation')
-      p
-        br/
-        = link_to "Подробнеее", "#", class: "btn btn-theme"
+      .icons
+        i.fa.fa-globe aria-hidden="true"
+      p= t('crimeainfocom.services.description.corporation')
     .col-lg-3
-      i.fa.fa-building aria-hidden="true"
-      h4 = t('crimeainfocom.services.name.office')
-      p.description = t('crimeainfocom.services.description.office')
-      p
-        br/
-        = link_to "Подробнеее", "#", class: "btn btn-theme"
+      .icons
+        i.fa.fa-briefcase aria-hidden="true"
+      p= t('crimeainfocom.services.description.office')
     .col-lg-3
-      i.fa.fa-cog aria-hidden="true"
-      h4 = t('crimeainfocom.services.name.support')
-      p.description = t('crimeainfocom.services.description.support')
-      p
-        br/
-        = link_to "Подробнеее", "#", class: "btn btn-theme"
+      .icons
+        i.fa.fa-cogs aria-hidden="true"
+      p= t('crimeainfocom.services.description.support')

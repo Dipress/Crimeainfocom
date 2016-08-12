@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   load_and_authorize_resource
   before_action :find_static_page
+  layout "blog", only: [:index]
 
   def index
     if @page.nil?

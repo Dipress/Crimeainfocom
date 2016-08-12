@@ -2,10 +2,14 @@ class NewsController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_news, only: [:show, :edit, :update, :delete, :destroy]
-  layout "blog", only: [:show]
+  layout "blog", only: [:index, :show]
 
   def index
-    @news = News.all.where(published: true).limit(4)
+    @news = News.all.where(published: true)
+  end
+
+  def list
+    @news = News.all.where(published: true).order(id: :desc).limit(5)
   end
 
   def new

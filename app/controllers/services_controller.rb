@@ -2,6 +2,7 @@ class ServicesController < ApplicationController
   load_and_authorize_resource
   before_action :authenticate_user!, except: [:index, :show]
   before_action :find_service, only: [:show, :edit, :update, :delete, :destroy]
+  layout "blog", only: [:index, :show]
 
   def index
     @services = Service.all
