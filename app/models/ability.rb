@@ -9,7 +9,7 @@ class Ability
       can :manage, :all
       can :access, :ckeditor
     else
-      can :read, News
+      can [:read, :list], News
       can :read, Service
       can :read, StaticPage
       can :read, ActiveAdmin::Page, :name => "Dashboard"

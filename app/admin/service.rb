@@ -43,6 +43,7 @@ ActiveAdmin.register Service do
       f.input :body, as: :ckeditor, input_html: { ckeditor: { height: 400 } }
       f.input :service_ids, as: :select, collection: Service.all.collect {|service| [service.name, service.id] }
        f.has_many :pictures do |p|
+        p.input :id, input_html: { value: p.object.id }, as: :hidden
         p.input :file, as: :file, label: "#{I18n.t('activerecord.models.picture.one')}", hint: image_tag(p.object.file.url(:thumb).to_s)
         p.input :_destroy, as: :boolean, required: :false, label: "#{I18n.t('active_admin.forms.delete_image')}"
       end

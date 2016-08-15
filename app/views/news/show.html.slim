@@ -1,7 +1,7 @@
+h3 = @news.title
 - @news.pictures.each do |p|
   .picture
     = image_tag p.file_url.to_s
-h3 = @news.title
 .date
   p = I18n.l @news.created_at, format: :long
 .body

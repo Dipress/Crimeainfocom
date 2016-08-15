@@ -11,7 +11,7 @@
       ul.nav.navbar-nav
         li.active
           = link_to "Новости", news_index_path
-        - StaticPage.all.limit(3).each do |sp|
+        - StaticPage.all.limit(4).each do |sp|
           li = link_to sp.title, "/#{sp.slug}"
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#" 
