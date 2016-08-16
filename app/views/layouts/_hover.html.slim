@@ -5,10 +5,30 @@
     li data-slide-to="2" data-target="#carousel-example-generic" 
   .carousel-inner role="listbox" 
     .item.active
-      = image_tag('slide3.jpg')
+      .container
+        .row
+          .col-lg-6
+            = image_tag('wireles_girl.png')
+          .col-lg-6
+            .box
+              h1 Беспроводной доступ
+              p
+                | Предлагаем вам воспользоваться новыми услугами от «Крымнфоком» - беспроводной доступ по технологии AirMax 5G.
+              p
+                = link_to "Подробнее", service_path(1), class: "btn btn-next"
       .carousel-caption
     .item
-      = image_tag('slide3.jpg')
+      .container
+        .row
+          .col-lg-6
+            .box
+              h1 Выделенная линия
+              p
+                | Подключение к сети Интернет по выделенным линиям наиболее эффективно для компаний, чья деятельность связана с необходимостью постоянного присутствия во всемирной сети.
+              p
+                = link_to "Подробнее", service_path(2), class: "btn btn-next"
+          .col-lg-6
+            = image_tag('man.png')
       .carousel-caption
   a.left.carousel-control data-slide="prev" href="#carousel-example-generic" role="button" 
     span.glyphicon.glyphicon-chevron-left aria-hidden="true" 

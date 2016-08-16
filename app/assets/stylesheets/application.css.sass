@@ -20,6 +20,12 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic-ext,cyrillic)
 
+@font-face
+  font-family: 'GeometriaLight'
+  src: url('Geometria-Light.eot')
+  src: url('Geometria-Light.eot?#iefix') format("embedded-opentype"), url('Geometria-Light.woff') format("woff"), url('Geometria-Light.ttf') format("truetype"), url('Geometria-Light.svg#Geometria-Light') format("svg")
+  font-weight: normal
+  font-style: normal
 html
   body
     background: #fff 
@@ -30,7 +36,7 @@ html
     font-weight: 400
 
     h1, h2, h3, h4, h5, h6
-      font-family: 'Open Sans', Arial,  sans-serif
+      font-family: 'GeometriaLight', sans-serif
     p 
       padding: 0 
       margin-bottom: 12px
@@ -50,16 +56,18 @@ html
         .row
           .col-lg-4.news
             h3
-              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              font: 300 23px/28px "GeometriaLight", Arial, sans-serif
               color: #000
               letter-spacing: -0.15px
+            h5
+              font-family: "Open Sans", Arial, sans-serif
             .picture
             .date
               font-size: 12px
               color: #b3b3b3
           .col-lg-4.about
             h3
-              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              font: 300 23px/28px "GeometriaLight", Arial, sans-serif
               color: #000
               letter-spacing: -0.15px
             .image
@@ -77,7 +85,7 @@ html
               transform: scale(1.5)
           .col-lg-4.contacts
             h3
-              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              font: 300 23px/28px "GeometriaLight", Arial, sans-serif
               color: #000
               letter-spacing: -0.15px
             p.tel, p, a
@@ -87,16 +95,13 @@ html
             p.tel
               margin: 0
               font-size: 18px
-              font-family: 'Open Sans', Arial, sans-serif
             .block
-              font-family: 'Open Sans', Arial, sans-serif
               padding: 30px 30px 25px
-              background: #57aacd
+              background: #0080ff
               i
                 padding-right: 5px
               h2
                 text-align: center
-                font-family: 'Open Sans', Arial, sans-serif
                 color: #fff
                 font-size: 34px
                 line-height: 38px
@@ -113,53 +118,83 @@ html
         margin-bottom: 0px
 
       .navbar-brand
-        font-family: 'Open Sans', Arial,  sans-serif
+        font-family: 'Ubuntu', Arial,  sans-serif
         font-weight: 900
 
       .navbar-header .navbar-brand 
-        color: white
+        color: #767676
       .navbar-header .navbar-brand:hover
-        color: #57aacd
+        color: #0080ff
 
       .navbar-default .navbar-nav > li > a
-        font-family: 'Open Sans',sans-serif
+        font-family: 'Ubuntu',sans-serif
         font-size: 1.125em
-        font-weight: 600
-        color: #fff
+        font-weight: 400
+        color: #767676
         text-decoration: none
 
       .navbar-default .navbar-nav > li > a:hover,
       .navbar-default .navbar-nav > li > a:focus,
-        color: #57aacd
+        color: #0080ff
 
       .navbar-default .navbar-nav > .active > a, 
       .navbar-default .navbar-nav > .active > a:hover, 
       .navbar-default .navbar-nav > .active > a:focus
-        color: #57aacd
+        color: #0080ff
         background-color: transparent
 
       .navbar-default
-        border-bottom: 5px #57aacd solid
-        background-color: #434547
+        border-bottom: 5px #0080ff solid
+        background-color: #fff
 
       .dropdown-menu 
-        background: #434547
+        background: #fff
 
       .dropdown-menu > li > a
-        font-family: 'Open Sans',sans-serif
+        font-family: 'Ubuntu',sans-serif
         font-size: 1.125em
-        font-weight: 600
-        color: #fff
+        color: #767676
         text-decoration: none
 
     .hover
       margin-top: 70px
-      h3, h5
-        color: white
-        font-weight: 400
-      h1 
-        color: white
-        margin-bottom: 25px
+      background-color: #00aeff
+      background-image: url('hover-bg.png')
+      background-repeat: repeat
+
+      .container
+        .row
+          .col-lg-6
+            min-height: 418px
+            .box
+              padding-top: 100px
+              h1
+                font-size: 80px
+                font-weight: 800
+                line-height: 84px
+                padding-bottom: 9px
+                color: #fff
+                font-family: 'GeometriaLight'
+              p
+                color: #fff
+                font-size: 16px
+              .btn-next
+                position: relative
+                padding: 10px 20px 10px 20px
+                text-align: left
+                font-size: 14px
+                background: #fff
+                color: #0080ff
+              .btn-next:hover
+                color: #0080ff
+                opacity: .85
+              .btn
+                font-weight: 400
+                font-family: 'GeometriaLight', sans-serif
+                text-transform: uppercase
+                letter-spacing: 1.5px
+
+
 
     .content
       .container
@@ -168,7 +203,7 @@ html
             .picture
             h3
               color: #000
-              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              font: 300 23px/28px "GeometriaLight", Arial, sans-serif
               letter-spacing: -0.15px
               margin-bottom: 15px
             .date
@@ -178,7 +213,7 @@ html
             .body
           .col-lg-4.contacts
             h3
-              font: 300 23px/28px "Open Sans", Arial, sans-serif
+              font: 300 23px/28px "GeometriaLight", Arial, sans-serif
               color: #000
               letter-spacing: -0.15px
             p.tel, p, a
@@ -192,12 +227,12 @@ html
             .block
               font-family: 'Open Sans', Arial, sans-serif
               padding: 30px 30px 25px
-              background: #57aacd
+              background: #0080ff
               i
                 padding-right: 5px
               h2
                 text-align: center
-                font-family: 'Open Sans', Arial, sans-serif
+                font-family: 'GeometriaLight', Arial, sans-serif
                 color: #fff
                 font-size: 34px
                 line-height: 38px
@@ -207,7 +242,7 @@ html
                 margin-top: 0px
 
     .wrapp-blue
-      background: #57aacd
+      background: #0080ff
       margin-top: 70px
       margin-bottom: 60px
       padding-top: 25px
@@ -226,7 +261,7 @@ html
             margin: 26px 0 35px 0
             h2
               text-align: center
-              font: 300 23px/28px "Open Sans",Arial,sans-serif
+              font: 300 23px/28px "GeometriaLight", sans-serif
               color: #000
               letter-spacing: -.15px
         .row
@@ -242,13 +277,13 @@ html
                 font-size: 52px
                 text-align: center
                 color: #fff
-                background: #62bfe6
+                background: #00aeff
 
     footer
       margin-top: 100px
       padding: 10px 0px 10px 0px
       background-color: #434547
-      border-top: 5px #57aacd solid
+      border-top: 5px #0080ff solid
       .container
         .row
           .col-lg-12
