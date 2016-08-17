@@ -84,38 +84,33 @@ html
               -o-transform: scale(1.5)
               transform: scale(1.5)
           .col-lg-4.contacts
+            hr
+              margin-top: 0px
             h3
               font: 300 23px/28px "GeometriaLight", Arial, sans-serif
               color: #000
               letter-spacing: -0.15px
-            p.tel, p, a
-              color: #fff
-            a
-              font-weight: 700
-            p.tel
-              margin: 0
-              font-size: 18px
-            .block
-              padding: 30px 30px 25px
-              background: #0080ff
-              i
-                padding-right: 5px
-              h2
-                text-align: center
-                color: #fff
-                font-size: 34px
-                line-height: 38px
-              h3
-                color: #fff
-              hr
-                margin-top: 0px
-
+            .box
+              .box-line
+                ul
+                  margin: 0
+                  padding: 0
+                  li
+                    list-style-type: none
+                    font: 400 18px/22px "GeometriaLight", Arial, sans-serif
+                    font-weight: bold
+                    span
+                      padding-left: 10px
+                p
+                  a
+                  i
+                    padding-right: 5px
 
     header
       .navbar
-        min-height: 70px
+        height: 70px
         padding-top: 10px
-        margin-bottom: 0px
+        margin: 0
 
       .navbar-brand
         font-family: 'Ubuntu', Arial,  sans-serif
@@ -136,6 +131,12 @@ html
       .navbar-default .navbar-nav > li > a:hover,
       .navbar-default .navbar-nav > li > a:focus,
         color: #0080ff
+
+      .navbar-default .navbar-nav > li > a.active,
+      .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus,
+      .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus
+        background-color: #0080ff
+        color: #fff
 
       .navbar-default .navbar-nav > .active > a, 
       .navbar-default .navbar-nav > .active > a:hover, 
@@ -194,8 +195,6 @@ html
                 text-transform: uppercase
                 letter-spacing: 1.5px
 
-
-
     .content
       .container
         .row
@@ -242,7 +241,10 @@ html
                 margin-top: 0px
 
     .wrapp-blue
-      background: #0080ff
+      background-color: #00aeff
+      background-image: url('hover-bg.png')
+      background-repeat: repeat
+      height: 200px
       margin-top: 70px
       margin-bottom: 60px
       padding-top: 25px
@@ -283,7 +285,6 @@ html
       margin-top: 100px
       padding: 10px 0px 10px 0px
       background-color: #434547
-      border-top: 5px #0080ff solid
       .container
         .row
           .col-lg-12

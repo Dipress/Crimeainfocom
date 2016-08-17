@@ -9,15 +9,15 @@
       = link_to "Крыминфоком", root_path, class: "navbar-brand"
     .navbar-collapse.collapse.navbar-right
       ul.nav.navbar-nav
-        li.active
-          = link_to "Новости", news_index_path
+        li
+          = link_to "Новости", news_index_path, class: current_page?(news_index_path) && 'active'
         - StaticPage.all.limit(4).each do |sp|
-          li = link_to sp.title, "/#{sp.slug}"
+          li = link_to sp.title, "/#{sp.slug}", class: current_page?("/#{sp.slug}") && 'active' 
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#" 
             | Услуги и цены
             b.caret
-          ul.dropdown-menu
+          ul.dropdown-menu.active
             - Service.all.each do |s| 
               li = link_to s.name, service_path(s.to_param)
         li= link_to "Для клиентов", "#"

@@ -28,68 +28,77 @@ html
             P
               | «Крыминфоком» предлагает надежную техническую поддержку корпоративной сети на базе собственной мультисервисной телекоммуникационной сети.
           .col-lg-4.contacts
-            h3 Контакты
-            .block
-              h3 Абонентский отдел:
+            .box
+              h3 Абонентский отдел
               hr
-              p.tel
-                i.fa.fa-phone aria-hidden="true"
-                | +7(3652) 24-85-25
-              p.tel
-                i.fa.fa-phone aria-hidden="true" 
-                | +7(3652) 24-84-54
-              p.tel
-                i.fa.fa-mobile aria-hidden="true"
-                | +7(978) 838-37-23
-              p 
-                | Режим работы:
-                br/
-                | пн-пт 08:00 - 17:00
-              p
-                | Россия, Республика Крым, 
-                br/
-                | г. Cимферополь, ул. Тургенева, 20
-                br/
-                i.fa.fa-envelope-o aria-hidden="true"
-                = mail_to("contracts@crimeainfo.com")
-              h3 Техническая поддержка:
+              .box-line
+                ul
+                  li 
+                    i.fa.fa-phone aria-hidden="true"
+                    span +7(3652) 24-85-25
+                  li
+                    i.fa.fa-phone aria-hidden="true"  
+                    span +7(3652) 24-84-54
+                  li
+                    i.fa.fa.fa-phone aria-hidden="true"
+                    span +7(978) 838-37-23
+              .box-line 
+                p
+                  | Режим работы:
+                  br/
+                  | пн-пт 08:00 - 17:00
+              .box-line
+                p
+                  | Россия, Республика Крым, 
+                  br/
+                  | г. Cимферополь, ул. Тургенева, 20
+                  br/
+                  i.fa.fa-envelope-o aria-hidden="true"
+                  = mail_to("contracts@crimeainfo.com")
+            .box
+              h3 Техническая поддержка
               hr
-              p.tel 
-                i.fa.fa-phone aria-hidden="true"
-                | +7(3652) 54-70-77
-              p.tel 
-                i.fa.fa-mobile aria-hidden="true"
-                | +7(978) 838-37-73
-              p 
-                | Режим работы:
-                br/
-                | пн-пт 08:00 - 17:00
-                br/
-                | cуб 09:00 - 16:00
-                br/
-                | вск 09:00 - 11:30
-              p
-                | Россия, Республика Крым, 
-                br/
-                | г. Cимферополь, ул. Тургенева, 20
-                br/
-                i.fa.fa-envelope-o aria-hidden="true"
-                = mail_to("support@crimeainfo.com")
-              
-              p.tel 
-                i.fa.fa-phone aria-hidden="true"
-                | +7(3652) 54-70-77
-              p.tel
-                i.fa.fa-mobile aria-hidden="true" 
-                | +7(978) 838-37-75
-              p
-                | Россия, Республика Крым, 
-                br/
-                | г. Бахчисарай, ул. Строительная, 23
-                br/
-                i.fa.fa-envelope-o aria-hidden="true"
-                = mail_to("support@crimeainfo.com")
-
+              .box-line
+                ul
+                  li
+                    i.fa.fa-phone aria-hidden="true"
+                    span +7(3652) 54-70-77
+                  li
+                    i.fa.fa-phone aria-hidden="true"
+                    span +7(978) 838-37-73
+              .box-line
+                p 
+                  | Режим работы:
+                  br/
+                  | пн-пт 08:00 - 17:00
+                  br/
+                  | cуб 09:00 - 16:00
+                  br/
+                  | вск 09:00 - 11:30
+              .box-line
+                p
+                  | Россия, Республика Крым, 
+                  br/
+                  | г. Cимферополь, ул. Тургенева, 20
+                  br/
+                  i.fa.fa-envelope-o aria-hidden="true"
+                  = mail_to("support@crimeainfo.com")
+              .box-line
+                ul
+                  li
+                    i.fa.fa-phone aria-hidden="true"
+                    span +7(3652) 54-70-77
+                  li
+                    i.fa.fa-phone aria-hidden="true"
+                    span +7(978) 838-37-75
+              .box-line
+                p
+                  | Россия, Республика Крым, 
+                  br/
+                  | г. Бахчисарай, ул. Строительная, 23
+                  br/
+                  i.fa.fa-envelope-o aria-hidden="true"
+                  = mail_to("support@crimeainfo.com")
 
     footer
       = render 'layouts/footer'
