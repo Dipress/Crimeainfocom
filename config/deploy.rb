@@ -8,7 +8,8 @@ set :rvm_path, "/usr/local/rvm"
 set :application, "crimeainfocom"
 set :repository,  "git@github.com:Dipress/Crimeainfocom.git"
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public')
+set :linked_dirs, fetch(:linked_dirs, ['log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uploads'])
+set :linked_files, fetch(:linked_files, ['config/database.yml', 'config/secrets.yml'])
 
 set :scm, :git
 set :user, "root"
@@ -50,13 +51,6 @@ namespace :deploy do
     run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
   end
 
-  desc 'Create symlinks on files'
-  task :symlinks do
-    run "ln -s /var/www/crimeainfocom/database.yml #{current_release}/config/database.yml"
-    run "ln -s /var/www/crimeainfocom/secrets.yml #{current_release}/config/secrets.yml"
-    run "ls -nfs #{current_release}/public #{shared_path}/public"
-  end
 end
 
-before "deploy:assets:precompile", "deploy:symlinks"
 after "deploy", "deploy:cleanup", "deploy:restart"
