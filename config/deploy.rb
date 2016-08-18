@@ -8,6 +8,8 @@ set :rvm_path, "/usr/local/rvm"
 set :application, "crimeainfocom"
 set :repository,  "git@github.com:Dipress/Crimeainfocom.git"
 
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uploads')
+
 set :scm, :git
 set :user, "root"
 set :use_sudo, false
@@ -50,10 +52,9 @@ namespace :deploy do
 
   desc 'Create symlinks on files'
   task :symlinks do
-    run "mkdir #{current_release}/puplic/uploads"
     run "ln -s /var/www/crimeainfocom/database.yml #{current_release}/config/database.yml"
     run "ln -s /var/www/crimeainfocom/secrets.yml #{current_release}/config/secrets.yml"
-    run "ls -s /var/www/crimeainfocom/uploads #{current_release}/public/uploads" 
+    execute "ls -nfs #{current_release}/public/uploads #{shared_path}/public"
   end
 end
 
