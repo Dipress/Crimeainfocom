@@ -50,6 +50,7 @@ namespace :deploy do
 
   desc 'Create symlinks on files'
   task :symlinks do
+    run 'mkdir #{current_path}/public/uploads'
     run "ln -s /var/www/crimeainfocom/database.yml #{current_release}/config/database.yml"
     run "ln -s /var/www/crimeainfocom/secrets.yml #{current_release}/config/secrets.yml"
     run "ls -s /var/www/crimeainfocom/uploads #{current_release}/public/uploads" 
