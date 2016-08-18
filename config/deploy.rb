@@ -1,4 +1,4 @@
-set :rvm_ruby_string, "rvm use 2.3.0@crimeainfocom-rails5"
+set :rvm_ruby_string, "2.3.0@crimeainfocom-rails5"
 require "rvm/capistrano"
 require "bundler/capistrano"
 
