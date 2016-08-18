@@ -8,6 +8,7 @@
 /.bundle
 
 config/database.yml
+config/secrets.yml
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -21,3 +22,6 @@ config/database.yml
 
 # Ignore Byebug command history file.
 .byebug_history
+
+dump.rdb
+.sass-cache
