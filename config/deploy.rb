@@ -1,56 +1,58 @@
-set :rvm_ruby_string, "2.3.0@crimeainfocom-rails5"
-require "rvm/capistrano"
-require "bundler/capistrano"
+# config valid only for current version of Capistrano
+#lock '3.6.0'
 
 set :rvm_type, :system
-set :rvm_path, "/usr/local/rvm"
+set :rvm_ruby_version, '2.3.0@crimeainfocom-rails5'
+set :rvm_roles, [:app, :web]
 
-set :application, "crimeainfocom"
-set :repository,  "git@github.com:Dipress/Crimeainfocom.git"
+set :repo_url, "git@github.com:Dipress/Crimeainfocom.git"
 
-set :linked_dirs, fetch(:linked_dirs, ['log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uploads'])
-set :linked_files, fetch(:linked_files, ['config/database.yml', 'config/secrets.yml'])
+set :branch, 'master'
 
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+
+# Default deploy_to directory is /var/www/my_app_name
+
+set :rails_env, 'production'
+set :migration_role, :db
+set :migration_servers, -> { primary(fetch(:migration_role)) }
+set :conditionally_migrate, true
+
+set :assets_roles, [:app, :web]
+
+# Default value for :scm is :git
 set :scm, :git
-set :user, "root"
-set :use_sudo, false
 
-set :branch, "master"
-set :deploy_via, :remote_cache
-set :keep_releases, 3
-set :deploy_to, "/var/www/apps/#{application}"
-set :rails_env, "production"
-set :domain, "194.54.152.50"
-set :scm_command, "/usr/bin/git"
-set :scm_verbose, true
-set :normalize_asset_timestamps, false
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
 
-set :unicorn_conf, "#{deploy_to}/current/config/unicorn.rb"
-set :unicorn_pid, "#{deploy_to}/shared/pids/unicorn.pid"
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
 
-role :web, domain
-role :app, domain
-role :db,  domain, primary: true
+# Default value for :pty is false
+# set :pty, true
 
-ssh_options[:forward_agent] = true
-ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
+# Default value for :linked_files is []
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
+
+# Default value for linked_dirs is []
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uploads'
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
+# set :keep_releases, 5
+
+set :tmp_dir, "/home/deploy/tmp"
+
+after "deploy", "deploy:cleanup"
+after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
-  desc 'Unicorn restart'
   task :restart do
-    run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -USR2 `cat #{unicorn_pid}`; else cd #{latest_release} && bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D; fi"
+    invoke 'unicorn:restart'
   end
-
-  desc 'Unicorn start'
-  task :start do
-    run "cd #{latest_release} && bundle exec unicorn_rails -c #{unicorn_conf} -E #{rails_env} -D"
-  end
-
-  desc 'Unicorn stop'
-  task :stop do
-    run "if [ -f #{unicorn_pid} ] && [ -e /proc/$(cat #{unicorn_pid}) ]; then kill -QUIT `cat #{unicorn_pid}`; fi"
-  end
-
 end
-
-after "deploy", "deploy:cleanup", "deploy:restart"
