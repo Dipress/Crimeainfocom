@@ -54,7 +54,7 @@ namespace :deploy do
   task :symlinks do
     run "ln -s /var/www/crimeainfocom/database.yml #{current_release}/config/database.yml"
     run "ln -s /var/www/crimeainfocom/secrets.yml #{current_release}/config/secrets.yml"
-    execute "ls -nfs #{current_release}/public/uploads #{shared_path}/public"
+    run "ls -nfs #{current_release}/public/uploads #{shared_path}/public"
   end
 end
 
