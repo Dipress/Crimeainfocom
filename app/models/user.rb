@@ -26,6 +26,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
+  accepts_nested_attributes_for :roles, allow_destroy: true
 
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true

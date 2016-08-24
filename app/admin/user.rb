@@ -19,7 +19,7 @@ ActiveAdmin.register User do
   filter :sign_in_count
   filter :created_at
 
-  form do |f|
+  form(html: { multipart: true }) do |f|
     f.inputs "#{I18n.t('active_admin.forms.detail')}" do
       f.input :email
       f.input :password
@@ -27,7 +27,7 @@ ActiveAdmin.register User do
       f.input :first_name
       f.input :middle_name
       f.input :last_name
-      f.input :role_ids, as: :select, collection: Role.all.collect {|role| [role.name, role.id] }
+      f.input :roles, as: :select, collection: Role.all.collect {|role| [role.name, role.id] }
     end
     f.actions
   end
