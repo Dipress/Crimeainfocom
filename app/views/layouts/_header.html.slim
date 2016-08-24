@@ -20,5 +20,11 @@
           ul.dropdown-menu.active
             - Service.all.each do |s| 
               li = link_to s.name, service_path(s.to_param)
-        li= link_to "Для клиентов", "#"
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" href="#" 
+            | Для клиентов
+            b.caret
+          ul.dropdown-menu.active
+            li = link_to "Почта", "http://mail.crimeainfo.com"
+            li = link_to "Личный кабинет", "http://billing.crimeainfo.com/"
         li= link_to "Контакты", "#"
