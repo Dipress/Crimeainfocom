@@ -25,6 +25,6 @@
             | Для клиентов
             b.caret
           ul.dropdown-menu.active
-            li = link_to "Почта", "http://mail.crimeainfo.com"
             li = link_to "Личный кабинет", "http://billing.crimeainfo.com/"
-        li= link_to "Контакты", "#"
+        - StaticPage.where(id: 5).each do |sp|
+          li= link_to sp.title, "/#{sp.slug}", class: current_page?("/#{sp.slug}") && 'active'
