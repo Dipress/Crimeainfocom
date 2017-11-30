@@ -5,7 +5,7 @@ class NewsController < ApplicationController
   layout "blog", only: [:index, :show]
 
   def index
-    @news = News.all.where(published: true)
+    @news = News.all.where(published: true).order(id: :desc)
   end
 
   def list
