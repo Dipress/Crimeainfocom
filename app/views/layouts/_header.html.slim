@@ -26,6 +26,6 @@
             b.caret
           ul.dropdown-menu.active
             li = link_to "Личный кабинет", "http://billing.crimeainfo.com/"
-            li = link-to "РНКБ Интернет-банк", "https://online.rncb.ru/web_banking/protected/doc/payment/new/com_itv/i2531365"
+            li = link_to "РНКБ Интернет-банк", "https://online.rncb.ru/web_banking/protected/doc/payment/new/com_itv/i2531365"
         - StaticPage.where(id: 5).each do |sp|
           li= link_to sp.title, "/#{sp.slug}", class: current_page?("/#{sp.slug}") && 'active'
