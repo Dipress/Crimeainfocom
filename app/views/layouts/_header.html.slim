@@ -30,7 +30,8 @@
             | Оплата
             b.caret
           ul.dropdown-menu.active
-            li = link_to "РНКБ Интернет-банк", "https://online.rncb.ru/web_banking/protected/doc/payment/new/com_itv/i2531365"
+            - Payment.all.each do |pay|
+              li = link_to pay.title, payment_path(pay.to_param) 
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#" 
             | Для клиентов
