@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :services
   resources :news
+  resources :payments
 
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

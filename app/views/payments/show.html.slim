@@ -1,0 +1,6 @@
+h3 = @payment.title
+- @payment.pictures.each do |p|
+.date
+  p = I18n.l @payment.created_at, format: :long
+.body
+  = @payment.body.html_safe

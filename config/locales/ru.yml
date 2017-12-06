@@ -69,6 +69,7 @@ ru:
       news: "Новости"
       user: "Пользователи"
       role: "Группы"
+      payment: "Оплата"
       static_page: "Статический контент"
       service: "Услуги"
     forms:

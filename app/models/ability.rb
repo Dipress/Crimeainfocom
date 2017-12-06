@@ -12,6 +12,7 @@ class Ability
       can [:read, :list], News
       can :read, Service
       can :read, StaticPage
+      can :read, Payment
       can :read, ActiveAdmin::Page, :name => "Dashboard"
     end
     #
