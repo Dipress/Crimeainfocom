@@ -48,11 +48,27 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/uplo
 
 set :tmp_dir, "/home/deploy/tmp"
 
+set :default_environment, {
+  "RAILS_RELATIVE_URL_ROOT" => "/crimeinfocom"
+}
+
 after "deploy", "deploy:cleanup"
+after "deploy:assets:precompile", "deploy:symlink_relative_public"
 after 'deploy:publishing', 'deploy:restart'
 
 namespace :deploy do
+
+  task :symlink_relative_public, :roles => :app do
+    root_url = default_environment["RAILS_RELATIVE_URL_ROOT"]
+    if root_url
+      root_dir = root_url.split("/")[0..-2].join("/")
+      run "mkdir -p #{latest_release}/public#{root_dir}" if root_dir.present?
+      run "ln -nfs #{latest_release}/public #{latest_release}/public#{root_url}"
+    end
+  end
+
   task :restart do
     invoke 'unicorn:restart'
   end
+
 end
