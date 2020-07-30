@@ -21,7 +21,8 @@ gem 'draper',              '> 3.x'
 #Frontend
 gem 'slim'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 5.13.0'
+gem "font-awesome-rails"
 
 #Images
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
@@ -32,9 +33,9 @@ gem 'mini_magick'
 gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # Database
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.10'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
